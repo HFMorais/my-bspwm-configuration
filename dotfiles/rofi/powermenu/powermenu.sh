@@ -48,11 +48,12 @@ case $chosen in
 			systemctl reboot
         ;;
     $lock)
-		if [[ -f /usr/bin/i3lock ]]; then
-			i3lock
-		elif [[ -f /usr/bin/betterlockscreen ]]; then
-			betterlockscreen -l
-		fi
+		#if [[ -f /usr/bin/i3lock ]]; then
+		#	i3lock
+		#elif [[ -f /usr/bin/betterlockscreen ]]; then
+		#	betterlockscreen -l
+		#fi
+		bash ~/.scripts/lock-screen.sh
         ;;
     $suspend)
 			mpc -q pause

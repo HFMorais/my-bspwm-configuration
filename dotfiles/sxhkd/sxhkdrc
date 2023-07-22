@@ -13,6 +13,10 @@ super + @space
 super + shift + @space
 	rofi -show window
 
+# Lock screen
+super + l
+	bash ~/.scripts/lock-screen.sh
+
 # Brave
 super + b
 	brave-browser
