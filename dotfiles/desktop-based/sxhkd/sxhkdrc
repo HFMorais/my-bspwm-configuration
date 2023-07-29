@@ -53,6 +53,51 @@ super + alt + {q,r}
 super + {_,shift + }w
 	bspc node -{c,k}
 
+# Close window with special upper mouse button
+button9
+	xdotool key Control_L+w
+
+# Close App with special bottom mouse button
+button8
+	bspc node -c
+
+# This is to bypass my shitty keyboard F / media key handling most users won't need this
+# F1
+XF86MonBrightnessDown
+	/bin/bash -c "sleep 0.1 && xdotool key F1"
+# F2
+XF86MonBrightnessUp
+	/bin/bash -c "sleep 0.1 && xdotool key F2"
+# F3
+XF86LaunchA
+	/bin/bash -c "sleep 0.1 && xdotool key F3"
+# F4
+XF86LaunchB
+	/bin/bash -c "sleep 0.1 && xdotool key F4"
+# F5
+XF86KbdBrightnessDown
+	/bin/bash -c "sleep 0.1 && xdotool key F5"
+# F6
+XF86KbdBrightnessUp
+	/bin/bash -c "sleep 0.1 && xdotool key F6"
+# F7
+XF86AudioPrev
+	/bin/bash -c "sleep 0.1 && xdotool key F7"
+# F8
+XF86AudioPlay
+	/bin/bash -c "sleep 0.1 && xdotool key F8"
+# F9
+XF86AudioNext
+	/bin/bash -c "sleep 0.1 && xdotool key F9"
+# F10
+XF86AudioMute
+	/bin/bash -c "sleep 0.1 && xdotool key F10"
+# F11
+XF86AudioLowerVolume
+	/bin/bash -c "sleep 0.1 && xdotool key F11"
+# F12
+XF86AudioRaiseVolume
+	/bin/bash -c "sleep 0.1 && xdotool key F12"
 
 #
 # state/flags
