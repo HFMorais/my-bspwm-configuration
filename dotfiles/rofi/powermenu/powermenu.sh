@@ -1,72 +1,62 @@
 #!/usr/bin/env bash
 
-## Author  : Aditya Shakya
-## Mail    : adi1090x@gmail.com
-## Github  : @adi1090x
-## Twitter : @adi1090x
-
-# Available Styles
-# >> Created and tested on : rofi 1.6.0-1
+## Author : Aditya Shakya (adi1090x)
+## Github : @adi1090x
 #
-# column_circle     column_square     column_rounded     column_alt
-# card_circle     card_square     card_rounded     card_alt
-# dock_circle     dock_square     dock_rounded     dock_alt
-# drop_circle     drop_square     drop_rounded     drop_alt
-# full_circle     full_square     full_rounded     full_alt
-# row_circle      row_square      row_rounded      row_alt
+## Rofi   : Power Menu
+#
+## Available Styles
+#
+## style-1   style-2   style-3   style-4   style-5
 
-theme="drop_square"
-#theme="card_square"
+# Current Theme
 dir="$HOME/.config/rofi/powermenu"
+theme='style'
 
-
-uptime=$(uptime -p | sed -e 's/up //g')
-
-rofi_command="rofi -theme $dir/$theme"
+# CMDs
+uptime="`uptime -p | sed -e 's/up //g'`"
+host=`hostname`
 
 # Options
-shutdown=""
-reboot=""
-lock=""
-suspend=""
-logout=""
+shutdown=''
+reboot=''
+lock=''
+suspend='⏾'
+logout=''
+yes=''
+no=''
 
-# Message
-msg() {
-	rofi -theme "$dir/message.rasi" -e "Available Options  -  yes / y / no / n"
+# Rofi CMD
+rofi_cmd() {
+	rofi -dmenu \
+		-p "Goodbye ${USER}" \
+		-mesg "Uptime: $uptime" \
+		-theme ${dir}/${theme}.rasi
 }
 
-# Variable passed to rofi
-options="$shutdown\n$reboot\n$lock\n$suspend\n$logout"
+# Pass variables to rofi dmenu
+run_rofi() {
+	echo -e "$lock\n$suspend\n$logout\n$reboot\n$shutdown" | rofi_cmd
+}
 
-chosen="$(echo -e "$options" | $rofi_command -p "Uptime: $uptime" -dmenu -selected-row 2)"
-case $chosen in
+# Actions
+chosen="$(run_rofi)"
+case ${chosen} in
     $shutdown)
-			systemctl poweroff
+    	systemctl poweroff
         ;;
     $reboot)
-			systemctl reboot
+		systemctl reboot
         ;;
     $lock)
-		#if [[ -f /usr/bin/i3lock ]]; then
-		#	i3lock
-		#elif [[ -f /usr/bin/betterlockscreen ]]; then
-		#	betterlockscreen -l
-		#fi
-		bash ~/.scripts/lock-screen.sh
+    	bash ~/.scripts/lock-screen.sh
         ;;
     $suspend)
-			mpc -q pause
-			amixer set Master mute
-			systemctl suspend
+		mpc -q pause
+		mixer set Master mute
+		systemctl suspend
         ;;
     $logout)
-			if [[ "$DESKTOP_SESSION" == "Openbox" ]]; then
-				openbox --exit
-			elif [[ "$DESKTOP_SESSION" == "bspwm" ]]; then
-				bspc quit
-			elif [[ "$DESKTOP_SESSION" == "i3" ]]; then
-				i3-msg exit
-			fi
+    	bspc quit
         ;;
 esac
