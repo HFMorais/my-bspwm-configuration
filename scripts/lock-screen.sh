@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # take screenshot
 import -window root /tmp/screenshot.png
 
