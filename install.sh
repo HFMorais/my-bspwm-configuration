@@ -49,9 +49,8 @@ unzip fontawesome-free-6.4.2-desktop.zip
 cp fontawesome-free-6.4.2-desktop/otfs/*.otf /home/$username/.fonts/.
 rm -rf fontawesome-free-6.4.2-desktop*
 
-unzip FicaCode.zip
-cp FiraCode*.ttf ./fonts/.
-rm FiraCode* LICENSE readme.md
+unzip FiraCode.zip -d /home/$username/.fonts/.
+rm FiraCode.zip
 
 fc-cache -vf
 
