@@ -13,9 +13,10 @@ else
     output=${output}"%{F#4C566A} "
 fi
 
-if nordvpn status | grep -q "Status: Connected"; then
-    output=${output}" %{F#81B6C6} "
+if dpkg -l | grep -i "nordvpn"; then
+    if nordvpn status | grep -q "Status: Connected"; then
+         output=${output}" %{F#81B6C6} "
+    fi
 fi
-#echo ""
 
 printf "%s" "$output"

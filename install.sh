@@ -54,7 +54,7 @@ rm FiraCode.zip
 
 fc-cache -vf
 
-# Theming
+# Theming dependencies
 git clone https://github.com/EliverLara/Nordic.git /home/$username/.themes/Nordic/.
 tar xvf resources/165371-Breeze.tar -C /home/$username/.icons/.
 
@@ -68,5 +68,18 @@ echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] http
 nala update
 nala install brave-browser -y
 
+# Define Theming
+touch ~/.gtkrc-2.0
+echo 'gtk-theme-name="Nordic"' >> .gtkrc-2.0
+echo 'gtk-icon-theme-name="Papirus"' >> .gtkrc-2.0
+echo 'gtk-cursor-theme-name="Breeze"' >> .gtkrc-2.0
+
+mkdir -p ~/.config/gtk-3.0
+touch ~/.config/gtk-3.0/settings.ini
+
+echo "[Settings]" >> ~/.config/gtk-3.0/settings.ini
+echo "gtk-theme-name=Nordic" >> ~/.config/gtk-3.0/settings.ini
+echo "gtk-icon-theme-name=Papirus" >> ~/.config/gtk-3.0/settings.ini
+echo "gtk-cursor-theme-name=Breeze" >> ~/.config/gtk-3.0/settings.ini
 
 echo "Configuration completed."

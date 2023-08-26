@@ -1,6 +1,7 @@
 #!/bin/sh
 
 PATH_AC="/sys/class/power_supply/AC"
+# My laptop has 2 batteries, so you may need to tweak this script
 PATH_BATTERY_0="/sys/class/power_supply/BAT0"
 PATH_BATTERY_1="/sys/class/power_supply/BAT1"
 

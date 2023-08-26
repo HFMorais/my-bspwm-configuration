@@ -1,7 +1,8 @@
 #! /bin/sh
 
-# Resolution hack for now
-xrandr --output DP-0 --mode 3440x1440 --rate 74.98
+# Resolution definition (if needed)
+# Use xrandr command to find the resolution you want to use, and define as the example bellow
+# xrandr --output DP-0 --mode 3440x1440 --rate 74.98
 
 ###########################################
 ##  Auto Starts
@@ -13,8 +14,7 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 bash ~/.config/polybar/launch.sh &
 
 # Wallpaper
-#feh --bg-fill ~/Pictures/Wallpaper/nordic-winter.jpg 
-feh --bg-fill ~/Pictures/Wallpaper/nordic.jpg 
+feh --bg-fill ~/Pictures/Wallpapers/wallpaper.jpg
 
 bspc monitor -d 1 2 3 4 5 6 7 8 9 10
 
