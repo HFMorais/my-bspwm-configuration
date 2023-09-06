@@ -1,6 +1,9 @@
 # Lobster-Debian-Configuration
 A "simple" Nordic theme bspwm configuration 
  
+[![Screenshot](https://raw.githubusercontent.com/HFMorais/my-bspwm-configuration/main/resources/screenshot.png)](https://raw.githubusercontent.com/HFMorais/my-bspwm-configuration/main/resources/screenshot.png)
+
+
 ### How to install:
 
 ```
