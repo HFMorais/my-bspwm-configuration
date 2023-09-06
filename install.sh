@@ -23,7 +23,7 @@ echo "Installing dependencies..."
 nala install wget pulseaudio git curl htop neofetch -y
 
 # Install desktop dependencies
-nala install feh bspwm sxhkd lightdm kitty rofi polybar picom thunar lxpolkit mpv x11-xserver-utils unzip yad pavucontrol lxappearance papirus-icon-theme -y
+nala install feh bspwm sxhkd lightdm kitty rofi polybar picom thunar lxpolkit mpv x11-xserver-utils unzip yad pavucontrol flameshot lxappearance papirus-icon-theme -y
 
 # Create basic folders
 echo "Creating basic folders..."

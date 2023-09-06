@@ -9,6 +9,16 @@ super + Return
 super + @space
 	rofi -show drun
 
+# Screenshots
+Print
+    flameshot launcher
+
+Print + alt
+    flameshot screen
+
+Print + ctrl
+    flameshot full
+
 # program selector
 super + shift + @space
 	rofi -show window
