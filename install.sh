@@ -23,7 +23,7 @@ echo "Installing dependencies..."
 nala install wget pulseaudio git curl htop neofetch -y
 
 # Install desktop dependencies
-nala install feh bspwm sxhkd lightdm kitty rofi polybar picom thunar lxpolkit mpv x11-xserver-utils unzip yad pavucontrol flameshot lxappearance papirus-icon-theme -y
+nala install feh bspwm sxhkd lightdm kitty rofi polybar picom nemo lxpolkit mpv x11-xserver-utils unzip yad pavucontrol flameshot lxappearance papirus-icon-theme -y
 
 # Create basic folders
 echo "Creating basic folders..."
@@ -34,12 +34,14 @@ mkdir -p /home/$username/.themes/Nordic
 mkdir -p /home/$username/.icons
 mkdir -p /home/$username/Pictures/Wallpapers
 mkdir -p /home/$username/Downloads
+mkdir -p /home/$username/.scripts
 
 echo "Setting configuration files..."
 
 # Copy files around
 cp resources/wallpaper.jpg /home/$username/Pictures/Wallpapers/.
 cp -r dotfiles/* /home/$username/.config/.
+cp scripts/* /home/$username/.scripts/.
 
 # Font Work
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/FiraCode.zip

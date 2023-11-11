@@ -31,13 +31,21 @@ super + l
 super + b
 	brave-browser
 
-# Thunar
+# Brave (Incognito Window)
+super + shift + b
+	brave-browser --incognito
+
+# Nemo
 super + d
-	thunar
+	nemo
 
 # Youtube Video
 super + y
 	~/.scripts/youtube-clipboard.sh
+
+# Toggle Nordvpn
+super + shift + n
+	~/.scripts/nordvpn-toggle.sh
 
 # Quick suspend
 super + alt + Escape
